@@ -18,11 +18,10 @@ class CreateMunicipiosTable extends Migration
             $table->integer('cd_departamento');       
             $table->integer('codigo_municipio');
             $table->string('nombre_municipio');  
-            $table->foreign('cd_departamento') ->references('codigo_departamento')
-                                               ->on('departamentos')
-                                               ->cascadeOnUpdate('departamentos')
-                                               ->cascadeOnDelete();
-                                               
+            $table->foreignId('id_departamento')
+                  ->nullable()->constrained('departamentos')
+                  ->cascadeOnUpdate('departamentos')
+                  ->cascadeOnDelete();                        
 
                                              // ->references('codigo_departamento')
                                               //->on('departamentos')
