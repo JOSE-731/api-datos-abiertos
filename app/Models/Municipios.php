@@ -9,5 +9,10 @@ class Municipios extends Model
 {
     use HasFactory;
     protected $table = "municipios";
-    protected $fillable = ['codigo_municipio', 'nombre_departamento'];
+    protected $fillable = ['codigo_municipio', 'nombre_departamento', 'cd_departamento'];
+
+    public function municipio(){
+
+        //return $this->belongsTo(Municipios::class,'cd_departamento','codigo_departamento');
+    }
 }

@@ -15,8 +15,19 @@ class CreateMunicipiosTable extends Migration
     {
         Schema::create('municipios', function (Blueprint $table) {
             $table->id();
+            $table->integer('cd_departamento');       
             $table->integer('codigo_municipio');
-            $table->string('nombre_municipio');
+            $table->string('nombre_municipio');  
+            $table->foreign('cd_departamento') ->references('codigo_departamento')
+                                               ->on('departamentos')
+                                               ->cascadeOnUpdate('departamentos')
+                                               ->cascadeOnDelete();
+                                               
+
+                                             // ->references('codigo_departamento')
+                                              //->on('departamentos')
+                                              //->onDelete("cascade")
+                                              //->onUpdate("cascade");
             $table->timestamps();
         });
     }
