@@ -21,3 +21,6 @@ use Illuminate\Support\Facades\Route;
 //http://127.0.0.1:8000/api/departamentos
 Route::get('/departamentos', [DepartamentosController::class,'index']);
 
+//Municipios
+//http://127.0.0.1:8000/api/municipios
+Route::get('/municipios', [MunicipiosController::class,'index']);
