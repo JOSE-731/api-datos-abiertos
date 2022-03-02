@@ -11,8 +11,8 @@ class Municipios extends Model
     protected $table = "municipios";
     protected $fillable = ['codigo_municipio', 'nombre_departamento', 'id_departamento'];
 
-    public function municipio(){
+    public function Municipio(){
 
-        //return $this->belongsTo(Municipios::class,'cd_departamento','codigo_departamento');
+        return $this->belongsTo(Departamentos::class, 'id_departamento');
     }
 }
