@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\DepartamentosController;
+use App\Http\Controllers\LenguasNativasController;
 use App\Http\Controllers\MunicipiosController;
 use App\Models\Departamentos;
+use App\Models\LenguasNativas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +26,7 @@ Route::get('/departamentos', [DepartamentosController::class,'index']);
 //Municipios
 //http://127.0.0.1:8000/api/municipios
 Route::get('/municipios', [MunicipiosController::class,'index']);
+
+//Lenguas
+//http://127.0.0.1:8000/api/lenguas
+Route::get('/lenguas', [LenguasNativasController::class,'index']);
