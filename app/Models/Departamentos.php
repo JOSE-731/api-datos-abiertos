@@ -13,8 +13,13 @@ class Departamentos extends Model
     protected $fillable = ['codigo_departamento', 'nombre_departamento'];
     public $timestamps = false;
 
-    public function departamento(){
+    public function Departamentos(){
+        //Un departamento tiene muchos municipios
+        return $this->hasMany(Municipios::class, 'id');
+    }
 
-       // return $this->hasMany(Departamentos::class,'codigo_departamento','cd_departamento');
+    public function DepartamentosLenguas(){
+        //Un departamento tiene muchas lenguas
+        return $this->hasMany(LenguasNativas::class, 'id');
     }
 }
